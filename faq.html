@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ | GuardChain AI</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="logo-icon.svg">
+<link rel="stylesheet" href="shared.css">
+</head>
+<body class="antialiased noise">
+<div id="navbar"></div>
+
+<section class="pt-52 pb-24 px-4">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-16">
+      <span class="text-emerald-400 text-sm font-semibold uppercase tracking-[0.2em]">08 — FAQ</span>
+      <h1 class="text-4xl md:text-5xl font-black mt-4 mb-6">Preguntas frecuentes</h1>
+    </div>
+    <div class="space-y-3 mb-12">
+      <details class="bg-white/[0.02] border border-white/5 rounded-xl p-6 group">
+        <summary class="flex items-center justify-between font-semibold"><span>¿Por qué usar Stellar y no Ethereum?</span><span class="faq-arrow text-emerald-400 text-2xl transition-transform">+</span></summary>
+        <p class="text-gray-400 text-sm mt-4 leading-relaxed">Stellar ofrece transacciones en ~3 segundos con un costo de $0.00001, soporte nativo de memos de 28 bytes y no requiere gas masivo como Ethereum. Para alta frecuencia, es la opción óptima.</p>
+      </details>
+      <details class="bg-white/[0.02] border border-white/5 rounded-xl p-6 group">
+        <summary class="flex items-center justify-between font-semibold"><span>¿Qué pasa si el nodo de GuardChain cae?</span><span class="faq-arrow text-emerald-400 text-2xl transition-transform">+</span></summary>
+        <p class="text-gray-400 text-sm mt-4 leading-relaxed">Los incidentes quedan en el log local. Al reiniciar, el sistema reconstruye el estado desde la blockchain de Stellar. Los hashes on-chain son la fuente de verdad.</p>
+      </details>
+      <details class="bg-white/[0.02] border border-white/5 rounded-xl p-6 group">
+        <summary class="flex items-center justify-between font-semibold"><span>¿Cómo se protege la privacidad de los datos?</span><span class="faq-arrow text-emerald-400 text-2xl transition-transform">+</span></summary>
+        <p class="text-gray-400 text-sm mt-4 leading-relaxed">Solo se anclan hashes SHA-256 (IoC Hash), nunca los payloads completos. La información sensible permanece en el servidor del cliente.</p>
+      </details>
+      <details class="bg-white/[0.02] border border-white/5 rounded-xl p-6 group">
+        <summary class="flex items-center justify-between font-semibold"><span>¿Cómo se integra con mi infraestructura?</span><span class="faq-arrow text-emerald-400 text-2xl transition-transform">+</span></summary>
+        <p class="text-gray-400 text-sm mt-4 leading-relaxed">Se despliega como servicio sidecar. Puedes enrutar tráfico sospechoso al sensor sin modificar tu aplicación. También ofrecemos API para SIEMs (Splunk, Datadog, ELK).</p>
+      </details>
+      <details class="bg-white/[0.02] border border-white/5 rounded-xl p-6 group">
+        <summary class="flex items-center justify-between font-semibold"><span>¿Qué modelo de IA utilizan?</span><span class="faq-arrow text-emerald-400 text-2xl transition-transform">+</span></summary>
+        <p class="text-gray-400 text-sm mt-4 leading-relaxed">Usamos Groq para inferencia ultrarrápida con modelos como <span class="mono text-xs bg-white/5 px-1.5 py-0.5 rounded">gpt-oss-120b</span> y <span class="mono text-xs bg-white/5 px-1.5 py-0.5 rounded">qwen</span>. Además, hay un motor heurístico local basado en regex.</p>
+      </details>
+      <details class="bg-white/[0.02] border border-white/5 rounded-xl p-6 group">
+        <summary class="flex items-center justify-between font-semibold"><span>¿Cuál es el costo real de las transacciones?</span><span class="faq-arrow text-emerald-400 text-2xl transition-transform">+</span></summary>
+        <p class="text-gray-400 text-sm mt-4 leading-relaxed">Cada transacción cuesta 100 stroops = 0.00001 XLM. Esto permite registrar miles de incidentes al mes sin impacto económico significativo.</p>
+      </details>
+    </div>
+    <div class="flex justify-between">
+      <a href="architecture.html" class="text-gray-500 hover:text-emerald-400 text-sm">← Arquitectura</a>
+      <a href="index.html" class="text-emerald-400 hover:text-emerald-300 text-sm font-medium">Inicio →</a>
+    </div>
+  </div>
+</section>
+
+<div id="footer"></div>
+<script src="shared.js"></script>
+</body>
+</html>

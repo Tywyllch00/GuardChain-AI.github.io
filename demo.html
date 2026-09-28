@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo en Vivo | GuardChain AI</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="logo-icon.svg">
+<link rel="stylesheet" href="shared.css">
+</head>
+<body class="antialiased noise">
+<div id="navbar"></div>
+
+<section class="pt-52 pb-24 px-4">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- HEADER -->
+    <div class="text-center mb-16">
+      <span class="text-emerald-400 text-sm font-semibold uppercase tracking-[0.2em]">03 — Demo en Vivo</span>
+      <h1 class="text-4xl md:text-5xl font-black mt-4 mb-6">Incidentes certificados en Testnet</h1>
+      <p class="text-gray-400 max-w-2xl mx-auto text-lg">Cada amenaza ha sido detectada, clasificada y registrada en Stellar. Verificable por cualquier persona.</p>
+    </div>
+
+    <!-- ==================== VIDEO DEMO ==================== -->
+    <div class="mb-20">
+      <div class="text-center mb-10">
+        <span class="text-emerald-400 text-sm font-semibold uppercase tracking-[0.2em]">Video Demo</span>
+        <h2 class="text-3xl md:text-4xl font-black mt-3">GuardChain AI en acción</h2>
+        <p class="text-gray-400 mt-3 max-w-2xl mx-auto">Mira cómo detectamos una amenaza, la anclamos en Stellar y la certificamos on-chain en menos de 5 segundos.</p>
+      </div>
+
+      <!-- Contenedor del video responsive -->
+      <div class="max-w-4xl mx-auto">
+        <div class="relative aspect-video rounded-2xl overflow-hidden border border-white/10 bg-black/40 terminal-shadow">
+          <iframe
+            class="absolute inset-0 w-full h-full"
+            src="https://www.youtube.com/embed/iiQ_tQSBKTg"
+            title="GuardChain AI - Demo en Vivo"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p class="text-center text-gray-500 text-sm mt-4 mono">
+          Demo oficial del proyecto · Hackathon Stellar 2026
+        </p>
+      </div>
+    </div>
+
+    <!-- ==================== INCIDENTES ==================== -->
+    <div class="mb-12">
+      <div class="text-center mb-10">
+        <span class="text-emerald-400 text-sm font-semibold uppercase tracking-[0.2em]">Registro On-Chain</span>
+        <h2 class="text-3xl md:text-4xl font-black mt-3">Incidentes detectados en Testnet</h2>
+        <p class="text-gray-500 mt-3 max-w-2xl mx-auto">Cada tarjeta muestra un incidente real anclado en Stellar. Haz clic en "Verificar" para abrirlo en el explorador público.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <!-- INCIDENTE 1: SQL Injection -->
+        <div class="bg-[#0a0a0c] p-7 rounded-2xl border border-white/5 card-hover">
+          <div class="flex items-start justify-between mb-5">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/30 flex items-center justify-center text-xl">💉</div>
+              <div>
+                <h3 class="font-bold text-lg">SQL Injection</h3>
+                <p class="text-gray-500 text-xs mono">ID: 1d56ec78-893c-4486</p>
+              </div>
+            </div>
+            <div class="text-right">
+              <div class="text-2xl font-black text-red-400">85</div>
+              <div class="text-xs text-gray-500 uppercase">Score</div>
+            </div>
+          </div>
+          <p class="text-gray-400 text-sm mb-5 leading-relaxed">Payload <span class="mono text-xs bg-white/5 px-1.5 py-0.5 rounded">' OR '1'='1</span> detectado. Mitigación sugerida: parameterized queries + escape de inputs.</p>
+          <div class="bg-black/40 rounded-lg p-4 mb-4">
+            <div class="text-xs text-gray-500 mb-1 mono">TX HASH</div>
+            <div class="text-xs text-emerald-400 mono break-all">450d2dd41327999cc93eb73448ec5b6d461ac6e0c74d3e1e3d8bd319885d09ea</div>
+          </div>
+          <a href="https://stellar.expert/explorer/testnet/tx/450d2dd41327999cc93eb73448ec5b6d461ac6e0c74d3e1e3d8bd319885d09ea" target="_blank" class="text-emerald-400 text-sm font-medium hover:underline">Verificar en Stellar Expert ↗</a>
+        </div>
+
+        <!-- INCIDENTE 2: Path Traversal -->
+        <div class="bg-[#0a0a0c] p-7 rounded-2xl border border-white/5 card-hover">
+          <div class="flex items-start justify-between mb-5">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-xl">📂</div>
+              <div>
+                <h3 class="font-bold text-lg">Path Traversal / LFI</h3>
+                <p class="text-gray-500 text-xs mono">ID: 9cd7574f-21a2-4443</p>
+              </div>
+            </div>
+            <div class="text-right">
+              <div class="text-2xl font-black text-orange-400">80</div>
+              <div class="text-xs text-gray-500 uppercase">Score</div>
+            </div>
+          </div>
+          <p class="text-gray-400 text-sm mb-5 leading-relaxed">Intento de lectura de <span class="mono text-xs bg-white/5 px-1.5 py-0.5 rounded">/etc/passwd</span>. Mitigación: whitelist de rutas + realpath + open_basedir.</p>
+          <div class="bg-black/40 rounded-lg p-4 mb-4">
+            <div class="text-xs text-gray-500 mb-1 mono">TX HASH</div>
+            <div class="text-xs text-emerald-400 mono break-all">1818ab653bf53277d4e278a61f3e448fdc8e7d424609647f74ecdca9bfa5c9ce</div>
+          </div>
+          <a href="https://stellar.expert/explorer/testnet/tx/1818ab653bf53277d4e278a61f3e448fdc8e7d424609647f74ecdca9bfa5c9ce" target="_blank" class="text-emerald-400 text-sm font-medium hover:underline">Verificar en Stellar Expert ↗</a>
+        </div>
+
+        <!-- INCIDENTE 3: XSS -->
+        <div class="bg-[#0a0a0c] p-7 rounded-2xl border border-white/5 card-hover">
+          <div class="flex items-start justify-between mb-5">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-xl bg-yellow-500/10 border border-yellow-500/30 flex items-center justify-center text-xl">📜</div>
+              <div>
+                <h3 class="font-bold text-lg">Cross-Site Scripting (XSS)</h3>
+                <p class="text-gray-500 text-xs mono">ID: 00485d78-0861-45d7</p>
+              </div>
+            </div>
+            <div class="text-right">
+              <div class="text-2xl font-black text-yellow-400">70</div>
+              <div class="text-xs text-gray-500 uppercase">Score</div>
+            </div>
+          </div>
+          <p class="text-gray-400 text-sm mb-5 leading-relaxed">Inyección de script detectada. Mitigación: output encoding + Content Security Policy (CSP).</p>
+          <div class="bg-black/40 rounded-lg p-4 mb-4">
+            <div class="text-xs text-gray-500 mb-1 mono">TX HASH</div>
+            <div class="text-xs text-emerald-400 mono break-all">a425bc5092cd2a3c76db6bbbaa76525b69abf150a3deed3842f694f584dbc980</div>
+          </div>
+          <a href="https://stellar.expert/explorer/testnet/tx/a425bc5092cd2a3c76db6bbbaa76525b69abf150a3deed3842f694f584dbc980" target="_blank" class="text-emerald-400 text-sm font-medium hover:underline">Verificar en Stellar Expert ↗</a>
+        </div>
+
+        <!-- INCIDENTE 4: Acceso a Archivos Sensibles -->
+        <div class="bg-[#0a0a0c] p-7 rounded-2xl border border-white/5 card-hover">
+          <div class="flex items-start justify-between mb-5">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-xl">🔑</div>
+              <div>
+                <h3 class="font-bold text-lg">Acceso a Archivos Sensibles</h3>
+                <p class="text-gray-500 text-xs mono">ID: a1c6a22f-ed9d-4c50</p>
+              </div>
+            </div>
+            <div class="text-right">
+              <div class="text-2xl font-black text-purple-400">70</div>
+              <div class="text-xs text-gray-500 uppercase">Score</div>
+            </div>
+          </div>
+          <p class="text-gray-400 text-sm mb-5 leading-relaxed">Intento de acceso a <span class="mono text-xs bg-white/5 px-1.5 py-0.5 rounded">.env</span> y dotfiles. Mitigación: denegar acceso a dotfiles + mover config fuera del webroot.</p>
+          <div class="bg-black/40 rounded-lg p-4 mb-4">
+            <div class="text-xs text-gray-500 mb-1 mono">TX HASH</div>
+            <div class="text-xs text-emerald-400 mono break-all">47243ad733855f363e234f2dd10dbbd311ad1d2bbf5c8613b17c9a752f44f383</div>
+          </div>
+          <a href="https://stellar.expert/explorer/testnet/tx/47243ad733855f363e234f2dd10dbbd311ad1d2bbf5c8613b17c9a752f44f383" target="_blank" class="text-emerald-400 text-sm font-medium hover:underline">Verificar en Stellar Expert ↗</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ==================== CTA FINAL ==================== -->
+    <div class="bg-gradient-to-br from-emerald-500/5 to-transparent border border-emerald-500/20 rounded-3xl p-8 md:p-12 mb-12 text-center">
+      <h3 class="text-2xl md:text-3xl font-bold mb-4">¿Quieres ver el código?</h3>
+      <p class="text-gray-400 mb-8 max-w-xl mx-auto">Todo el proyecto está en GitHub. Puedes probarlo localmente en minutos siguiendo el README.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="https://github.com/Tywyllch00/GuardChain-AI" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-3 rounded-xl font-bold transition glow">📂 Ver en GitHub</a>
+        <a href="solution.html" class="border border-white/10 hover:border-white/30 bg-white/5 text-white px-8 py-3 rounded-xl font-bold transition">💡 Ver Solución</a>
+      </div>
+    </div>
+
+    <!-- NAV -->
+    <div class="flex justify-between">
+      <a href="solution.html" class="text-gray-500 hover:text-emerald-400 text-sm">← Solución</a>
+      <a href="market.html" class="text-emerald-400 hover:text-emerald-300 text-sm font-medium">Mercado →</a>
+    </div>
+
+  </div>
+</section>
+
+<div id="footer"></div>
+<script src="shared.js"></script>
+</body>
+</html>

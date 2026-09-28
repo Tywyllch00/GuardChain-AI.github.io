@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arquitectura | GuardChain AI</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="logo-icon.svg">
+<link rel="stylesheet" href="shared.css">
+</head>
+<body class="antialiased noise">
+<div id="navbar"></div>
+
+<section class="pt-52 pb-24 px-4">
+  <div class="max-w-6xl mx-auto">
+
+    <!-- HEADER -->
+    <div class="text-center mb-16">
+      <span class="text-emerald-400 text-sm font-semibold uppercase tracking-[0.2em]">07 — Arquitectura Técnica</span>
+      <h1 class="text-4xl md:text-5xl font-black mt-4 mb-6">Diseñado para producción</h1>
+      <p class="text-gray-400 max-w-2xl mx-auto text-lg">Componentes modulares, alta disponibilidad y fallback heurístico para garantizar el servicio.</p>
+    </div>
+
+    <!-- INNOVACIONES TÉCNICAS -->
+    <div class="mb-20">
+      <div class="text-center mb-10">
+        <span class="text-emerald-400 text-sm font-semibold uppercase tracking-[0.2em]">Innovaciones Técnicas</span>
+        <h2 class="text-3xl md:text-4xl font-black mt-3">Decisiones que nos diferencian</h2>
+        <p class="text-gray-500 mt-3 max-w-2xl mx-auto">Cuatro pilares técnicos que hacen único a GuardChain AI.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <!-- Innovación 01 -->
+        <div class="innovation-card emerald">
+          <div class="innovation-num">01 / VÍNCULO CRIPTOGRÁFICO</div>
+          <div class="innovation-icon emerald">🔗</div>
+          <h3 class="innovation-title">Vínculo Bilateral en Stellar</h3>
+          <p class="innovation-desc">El nodo registra el incidente con el memo <span class="mono text-xs bg-white/5 px-1.5 py-0.5 rounded text-emerald-400">SOC:&lt;tipo&gt;:&lt;hash&gt;</span> y el cliente certifica con <span class="mono text-xs bg-white/5 px-1.5 py-0.5 rounded text-emerald-400">CERT:&lt;hash_nodo&gt;</span>. Ninguna parte puede alterar ni negar la evidencia on-chain.</p>
+          <div class="innovation-tag emerald">✦ Zero-Trust aplicado</div>
+        </div>
+
+        <!-- Innovación 02 -->
+        <div class="innovation-card purple">
+          <div class="innovation-num">02 / ANTI-TAMPERING</div>
+          <div class="innovation-icon purple">🛡️</div>
+          <h3 class="innovation-title">Reconstrucción desde Blockchain</h3>
+          <p class="innovation-desc">Si un atacante borra <span class="mono text-xs bg-white/5 px-1.5 py-0.5 rounded text-purple-400">logs.json</span>, el sistema reconstruye el estado completo consultando la blockchain de Stellar. Los hashes on-chain son la fuente de verdad inmutable.</p>
+          <div class="innovation-tag purple">✦ Anti-borrado demostrable</div>
+        </div>
+
+        <!-- Innovación 03 -->
+        <div class="innovation-card yellow">
+          <div class="innovation-num">03 / UX SIN FRICCIÓN</div>
+          <div class="innovation-icon yellow">🔐</div>
+          <h3 class="innovation-title">Auth y Firma con Pollar</h3>
+          <p class="innovation-desc">El cliente no instala extensiones ni gestiona seed phrases. Login con Google, wallet determinista y firma de transacciones con un solo clic mediante <span class="mono text-xs bg-white/5 px-1.5 py-0.5 rounded text-yellow-400">signAndSubmitTx</span>.</p>
+          <div class="innovation-tag yellow">✦ Onboarding en 30 segundos</div>
+        </div>
+
+        <!-- Innovación 04 -->
+        <div class="innovation-card blue">
+          <div class="innovation-num">04 / ALTA DISPONIBILIDAD</div>
+          <div class="innovation-icon blue">🧠</div>
+          <h3 class="innovation-title">Motor Dual de IA</h3>
+          <p class="innovation-desc">Pipeline primario con <span class="mono text-xs bg-white/5 px-1.5 py-0.5 rounded text-blue-400">Groq LLM</span> (gpt-oss-120b, qwen) y <strong class="text-blue-300">fallback heurístico local</strong> basado en regex. La detección nunca se detiene aunque la API externa falle.</p>
+          <div class="innovation-tag blue">✦ 99.99% de uptime</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- DIAGRAMA -->
+    <div class="mb-12">
+      <div class="text-center mb-10">
+        <span class="text-emerald-400 text-sm font-semibold uppercase tracking-[0.2em]">Flujo de Datos</span>
+        <h2 class="text-3xl md:text-4xl font-black mt-3">De la amenaza a la certificación</h2>
+      </div>
+
+      <div class="bg-[#08080c] border border-white/10 rounded-3xl p-8 md:p-12 relative overflow-hidden">
+
+        <!-- Etiqueta de flujo -->
+        <div class="flex items-center justify-between mb-10 flex-wrap gap-3">
+          <div class="flex items-center gap-2">
+            <div class="w-2 h-2 rounded-full bg-emerald-400 pulse-dot"></div>
+            <span class="text-xs mono text-emerald-400 uppercase tracking-widest">Data Flow · Realtime</span>
+          </div>
+          <div class="hidden md:flex items-center gap-4 text-xs text-gray-500 mono">
+            <span>4 etapas</span>
+            <span class="text-emerald-400">&lt; 5s end-to-end</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] gap-6 lg:gap-2 items-center">
+
+          <!-- ETAPA 1 -->
+          <div class="flex flex-col gap-3">
+            <div class="arch-badge red">
+              <span class="w-1 h-1 rounded-full bg-red-400"></span>
+              ETAPA 01 · CAPTURA
+            </div>
+            <div class="arch-node attacker">
+              <div class="arch-label text-red-400/70">origen</div>
+              <div class="arch-title">🎯 Atacante</div>
+              <div class="arch-sub">Petición maliciosa</div>
+            </div>
+            <div class="arch-arrow-down"></div>
+            <div class="arch-node">
+              <div class="arch-label">sensor</div>
+              <div class="arch-title">🕵️ Network Sensor</div>
+              <div class="arch-sub">Honeypot · Puerto 8080</div>
+            </div>
+          </div>
+
+          <!-- Flecha -->
+          <div class="hidden lg:flex items-center justify-center">
+            <div class="flex items-center gap-1 text-emerald-400/60">
+              <div class="w-8 h-px bg-emerald-400/40"></div>
+              <span class="text-lg">▸</span>
+            </div>
+          </div>
+
+          <!-- ETAPA 2 -->
+          <div class="flex flex-col gap-3">
+            <div class="arch-badge purple">
+              <span class="w-1 h-1 rounded-full bg-purple-400"></span>
+              ETAPA 02 · ANÁLISIS
+            </div>
+            <div class="arch-node">
+              <div class="arch-label text-purple-400/70">motor dual</div>
+              <div class="arch-title">🧠 AI Engine</div>
+              <div class="arch-sub">Groq LLM (gpt-oss-120b, qwen)</div>
+            </div>
+            <div class="arch-arrow-down"></div>
+            <div class="arch-node">
+              <div class="arch-label text-purple-400/70">fallback</div>
+              <div class="arch-title">⚙️ Motor Heurístico</div>
+              <div class="arch-sub">Regex local · alta disponibilidad</div>
+            </div>
+            <div class="arch-arrow-down"></div>
+            <div class="arch-node">
+              <div class="arch-label text-emerald-400/70">resultado</div>
+              <div class="arch-title">#️⃣ IoC Hash SHA-256</div>
+              <div class="arch-sub">Huella criptográfica única</div>
+            </div>
+          </div>
+
+          <!-- Flecha -->
+          <div class="hidden lg:flex items-center justify-center">
+            <div class="flex items-center gap-1 text-emerald-400/60">
+              <div class="w-8 h-px bg-emerald-400/40"></div>
+              <span class="text-lg">▸</span>
+            </div>
+          </div>
+
+          <!-- ETAPA 3 -->
+          <div class="flex flex-col gap-3">
+            <div class="arch-badge">
+              <span class="w-1 h-1 rounded-full bg-emerald-400"></span>
+              ETAPA 03 · ANCLAJE
+            </div>
+            <div class="arch-node blockchain">
+              <div class="arch-label text-purple-400/70">emisor</div>
+              <div class="arch-title">⛓️ Stellar Client</div>
+              <div class="arch-sub">Nodo GuardChain</div>
+            </div>
+            <div class="arch-arrow-down"></div>
+            <div class="arch-node blockchain">
+              <div class="arch-label text-purple-400/70">ledger</div>
+              <div class="arch-title">🌐 Stellar Testnet</div>
+              <div class="arch-sub">Memo: SOC:&lt;tipo&gt;:&lt;hash&gt;</div>
+              <div class="mt-2 arch-badge purple">
+                <span>$0.00001 por tx</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flecha -->
+          <div class="hidden lg:flex items-center justify-center">
+            <div class="flex items-center gap-1 text-blue-400/60">
+              <div class="w-8 h-px bg-blue-400/40"></div>
+              <span class="text-lg">▸</span>
+            </div>
+          </div>
+
+          <!-- ETAPA 4 -->
+          <div class="flex flex-col gap-3">
+            <div class="arch-badge blue">
+              <span class="w-1 h-1 rounded-full bg-blue-400"></span>
+              ETAPA 04 · CERTIFICACIÓN
+            </div>
+            <div class="arch-node client">
+              <div class="arch-label text-blue-400/70">notificación</div>
+              <div class="arch-title">📡 SSE Push</div>
+              <div class="arch-sub">Tiempo real · sin polling</div>
+            </div>
+            <div class="arch-arrow-down"></div>
+            <div class="arch-node client">
+              <div class="arch-label text-blue-400/70">interfaz</div>
+              <div class="arch-title">⚛️ React Dashboard</div>
+              <div class="arch-sub">Vite · lista de incidentes</div>
+            </div>
+            <div class="arch-arrow-down"></div>
+            <div class="arch-node pollar">
+              <div class="arch-label text-yellow-400/70">auth + firma</div>
+              <div class="arch-title">🔐 Pollar</div>
+              <div class="arch-sub">Login Google · Wallet · Sign Tx</div>
+              <div class="mt-2 arch-badge yellow">
+                <span>API Key Testnet</span>
+              </div>
+            </div>
+            <div class="arch-arrow-down"></div>
+            <div class="arch-node client">
+              <div class="arch-label text-blue-400/70">certificación</div>
+              <div class="arch-title">✍️ Cliente</div>
+              <div class="arch-sub">Firma: CERT:&lt;hash_nodo&gt;</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Vínculo criptográfico -->
+        <div class="mt-10 flex items-center justify-center gap-4">
+          <div class="flex-1 h-px bg-gradient-to-r from-transparent via-blue-400/40 to-blue-400/40"></div>
+          <div class="flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/30">
+            <span class="text-xs mono text-blue-400 uppercase tracking-widest">🔗 Vínculo criptográfico bilateral</span>
+          </div>
+          <div class="flex-1 h-px bg-gradient-to-l from-transparent via-blue-400/40 to-blue-400/40"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FEATURES -->
+    <div class="grid md:grid-cols-3 gap-6 mb-12">
+      <div class="bg-white/[0.02] border border-white/5 rounded-2xl p-6 card-hover">
+        <div class="text-2xl mb-3">🔒</div>
+        <h4 class="font-bold mb-2">Alta Disponibilidad</h4>
+        <p class="text-gray-400 text-sm leading-relaxed">Motor dual IA (LLM + heurística local) para garantizar detección si la API de Groq falla.</p>
+      </div>
+      <div class="bg-white/[0.02] border border-white/5 rounded-2xl p-6 card-hover">
+        <div class="text-2xl mb-3">⚡</div>
+        <h4 class="font-bold mb-2">Tiempo Real</h4>
+        <p class="text-gray-400 text-sm leading-relaxed">Server-Sent Events (SSE) para notificaciones push sin polling. Menos consumo, más velocidad.</p>
+      </div>
+      <div class="bg-white/[0.02] border border-white/5 rounded-2xl p-6 card-hover">
+        <div class="text-2xl mb-3">🔐</div>
+        <h4 class="font-bold mb-2">Auth sin fricción</h4>
+        <p class="text-gray-400 text-sm leading-relaxed">Pollar gestiona login con Google, wallet embebida y firma de transacciones con un solo clic.</p>
+      </div>
+    </div>
+
+    <!-- TECH STACK -->
+    <div class="bg-white/[0.02] border border-white/5 rounded-2xl p-6 mb-12">
+      <div class="text-xs mono text-gray-500 uppercase tracking-widest mb-4 text-center">Stack técnico</div>
+      <div class="flex flex-wrap justify-center gap-2">
+        <span class="arch-badge">Python · Flask</span>
+        <span class="arch-badge">Stellar SDK</span>
+        <span class="arch-badge purple">Groq LLM</span>
+        <span class="arch-badge purple">Regex Engine</span>
+        <span class="arch-badge blue">React · Vite</span>
+        <span class="arch-badge yellow">🔐 Pollar Wallet</span>
+        <span class="arch-badge">SSE Streaming</span>
+        <span class="arch-badge red">Telegram Bot</span>
+      </div>
+    </div>
+
+    <!-- NAV -->
+    <div class="flex justify-between">
+      <a href="roadmap.html" class="text-gray-500 hover:text-emerald-400 text-sm">← Roadmap</a>
+      <a href="faq.html" class="text-emerald-400 hover:text-emerald-300 text-sm font-medium">FAQ →</a>
+    </div>
+
+  </div>
+</section>
+
+<div id="footer"></div>
+<script src="shared.js"></script>
+</body>
+</html>
